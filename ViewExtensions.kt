@@ -12,7 +12,7 @@ import io.eliq.core.R
 import kotlin.math.absoluteValue
 
 fun MaterialRadioButton.updateTextAppearance() {
-    val styleId = if (isChecked) R.style.eliqBodyRegularText_Bold else R.style.eliqBodyRegularText
+    val styleId = if (isChecked) R.style.bold else R.style.regular
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         setTextAppearance(styleId)
