@@ -112,3 +112,12 @@ fun AppCompatSpinner.setSpinnerFocusable() {
         }
     }
 }
+
+fun MaterialTextView.setDrawableStart(resId: Int) {
+    setCompoundDrawablesWithIntrinsicBounds(
+        resId,
+        0,
+        0,
+        0
+    )
+}
