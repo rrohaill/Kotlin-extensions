@@ -15,3 +15,16 @@ fun Any?.isNull(): Boolean {
 fun LinkedHashMap<String, String>.getOrKey(key: String): String {
     return this.getOrElse(key = key) { key }
 }
+
+fun String.fromHtml(): Spanned = HtmlCompat.fromHtml(this, HtmlCompat.FROM_HTML_MODE_COMPACT)
+
+fun <T : Any> multipleLetCheck(vararg variables: T?, block: (List<T>) -> Unit): Unit? {
+    return if (variables.all { variable -> variable != null }) {
+        block(variables.filterNotNull())
+    } else {
+        null
+    }
+}
+
+fun <T : Any> multipleNotNull(vararg variables: T?): Boolean =
+    variables.all { variable -> variable.isNotNull() }
